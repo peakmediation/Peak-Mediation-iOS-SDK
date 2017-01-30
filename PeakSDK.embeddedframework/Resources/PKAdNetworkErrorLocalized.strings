@@ -1,0 +1,17 @@
+/* 
+  PKAdNetworkErrorLocalized.strings
+  Peak
+
+  Created by Jane Kunina on 4/19/16.
+  Copyright © 2016 NIX. All rights reserved.
+*/
+
+"error.unsupportedAdType.banner" = "Banner ads are unsupported by network";
+"error.unsupportedAdType.interstitialStatic" = "Interstitial static ads are unsupported by network";
+"error.unsupportedAdType.interstitialVideo" = "Interstitial video ads are unsupported by network";
+"error.unsupportedAdType.native" = "Native ads are unsupported by network";
+
+"error.unavailable.banner" = "Banner ads are unavailable now";
+"error.unavailable.interstitialStatic" = "Interstitial static ads are unavailable now";
+"error.unavailable.interstitialVideo" = "Interstitial video ads are unavailable now";
+"error.unavailable.native" = "Native ads are unavailable now";

@@ -1,0 +1,14 @@
+/* 
+  PKPeakSDKErrorLocalized.strings
+  Peak
+
+  Created by Oleksandr Shakhmin on 4/26/16.
+  Copyright © 2016 NIX. All rights reserved.
+*/
+
+"error.initialization" = "Initialization failed";
+"error.show.banner" = "Failed to show banner";
+"error.show.interstitial" = "Failed to show interstitial";
+"error.show.native" = "Failed to show native";
+"error.unsupportedZone" = "Unavaliable zone";
+"error.noContentForZone" = "No content for zone";
