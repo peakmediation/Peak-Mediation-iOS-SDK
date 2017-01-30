@@ -104,7 +104,10 @@ Bitcode is an intermediate representation of a compiled program. Apps you upload
 
 ### Enable Geolocation
 
-If you use iOS 8.0 or later, please add the NSLocationWhenInUseUsageDescription key to your Info.plist
+Please add the NSLocationWhenInUseUsageDescription key to your Info.plist:
+
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Ads targeting</string>
 
 ### Enjoy Peak Medation platform
 
@@ -123,6 +126,13 @@ If you use iOS 8.0 or later, please add the NSLocationWhenInUseUsageDescription 
 2. Initialize SDK with your AppID:
 
         [[PeakSDK sharedInstance] configureWithAppId:@"YOUR_APP_ID"];
+
+    It’s usually enough to call initialization once per app launch. PeakSDKDelegate methods allows to control initialization state:
+
+        - (void)didCompleteInitialization;
+        - (void)didFailInitializationWithError:(NSError *)error;
+        
+    Multiple initializations calls are not the best practice but latest Peak SDK version can handle this correctly.
 
 3. Check availability of ad in particular zone:
 
@@ -157,6 +167,8 @@ If you use iOS 8.0 or later, please add the NSLocationWhenInUseUsageDescription 
 7. Handle SDK events using delegate pattern:
 
         [[PeakSDK sharedInstance] setDelegate:self];
+
+    PeakSDKDelegate provides protocol to implement proper response on PeakSDK events such as successful and unsuccessful ads presentation, completing reward experience or closing interstitials.
         
 8. Make async call that checks ad availability and executes completionBlock if ad is available and async call is not canceled.
    All UI changes should be handled in completionBlock, do not change UI in other place, if you use this call.
@@ -168,3 +180,12 @@ If you use iOS 8.0 or later, please add the NSLocationWhenInUseUsageDescription 
     If you want to cancel async call use following method:
     
         [[self asyncRequest] cancel];
+
+    Don’t forget to cancel async request if you don’t need one anymore. It prevent unexpected ads presentations and other unhandled behaviour. 
+
+9. Get more pesonalized ads with higher revenue. Just provide consumer's targeting info:
+
+        [[PeakSDK sharedInstance] setTargetingAge:[user age]];
+        [[PeakSDK sharedInstance] setTargetingGender:[user gender]];
+
+    You must set this info before calling -configureWithAppId: method.

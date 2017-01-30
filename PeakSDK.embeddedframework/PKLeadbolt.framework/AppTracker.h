@@ -1,5 +1,5 @@
 //
-//  AppTracker.h - v7.0
+//  AppTracker.h - v7.2
 //
 //  Created by Leadbolt.
 //  Copyright (c) 2016 Leadbolt. All rights reserved.

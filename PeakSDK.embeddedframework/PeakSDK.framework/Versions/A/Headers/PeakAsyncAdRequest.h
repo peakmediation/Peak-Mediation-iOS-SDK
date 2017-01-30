@@ -1,6 +1,6 @@
 //
 //  PeakAsyncAdRequest.h
-//  PeakSDK v.0.15.0
+//  PeakSDK v.0.16.0
 //
 //  Copyright © 2016 Peak. All rights reserved.
 //

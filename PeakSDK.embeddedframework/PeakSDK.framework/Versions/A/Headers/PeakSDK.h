@@ -1,6 +1,6 @@
 //
 //  PeakSDK.h
-//  PeakSDK v.0.15.0
+//  PeakSDK v.0.16.0
 //
 //  Copyright © 2016 Peak. All rights reserved.
 //
@@ -31,6 +31,13 @@ typedef NS_ENUM(NSUInteger, PKLoggingLevel)
     PKLoggingLevelFull
 };
 
+typedef NS_ENUM(NSUInteger, PKTargetGender)
+{
+    PKTargetGenderUnspecified,
+    PKTargetGenderMale,
+    PKTargetGenderFemale
+};
+
 @protocol PeakSDKDelegate<NSObject>
 @optional
 
@@ -51,7 +58,7 @@ typedef NS_ENUM(NSUInteger, PKLoggingLevel)
  */
 - (void)didShowBannerInZone:(NSString *)zoneID;
 
-/**
+/** 
  * Notifies your app that showing of a banner was failed.
  * @param zoneID The NSString object. It contain peakAdZoneID.
  * @param error The error object. It can contain underlying error with more useful information for key NSUnderlyingErrorKey
@@ -184,5 +191,15 @@ typedef NS_ENUM(NSUInteger, PKLoggingLevel)
  * Sets level of logging
  */
 - (void)setLogLevel:(PKLoggingLevel)logLevel;
+
+/**
+ * Sets info about user's age for more precise ad targeting
+ */
+- (void)setTargetingAge:(NSUInteger)age;
+
+/**
+ * Sets info about user's gender for more precise ad targeting
+ */
+- (void)setTargetingGender:(PKTargetGender)gender;
 
 @end
