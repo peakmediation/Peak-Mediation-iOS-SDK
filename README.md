@@ -152,7 +152,7 @@ Please add the NSLocationWhenInUseUsageDescription key to your Info.plist:
     
     Unlike Banner and Interstitial ads, the impressions and clicks are not automatically handled, and need to be wrapped when events do occur. Call the next method to track that native ad for current zone was shown:
 
-        [[PeakSDK sharedInstance] trackNativeAdShownForZone:@"YOUR_ZONE_ID"];
+        [[PeakSDK sharedInstance] trackNativeAdShownForZone:@"YOUR_ZONE_ID" inView:adView viewController:viewController];
     
     Use the next method to handle click on the "Call to Action" button. Call of this method will redirect the user to the website for privacy information:
 

@@ -1,6 +1,6 @@
 //
 //  PeakSDK.h
-//  PeakSDK v.0.16.0
+//  PeakSDK v.0.17.0
 //
 //  Copyright © 2016 Peak. All rights reserved.
 //
@@ -154,10 +154,12 @@ typedef NS_ENUM(NSUInteger, PKTargetGender)
 - (PeakNativeAd *)showNativeAdForZone:(NSString *)zone;
 
 /**
- * Notifies the ad networks that the Native Ad has actually been displayed on the screen.
+ * Notifies the ad networks that the Native Ad has actually been displayed on the screen and provides displaying context for this check.
  * @param zone An NSString representing the ad's zone ID.
+ * @param view An UIView representing the view where native ad implemented in.
+ * @param viewController An UIViewController representing the VC where native ad was shown.
  */
-- (void)trackNativeAdShownForZone:(NSString *)zone;
+- (void)trackNativeAdShownForZone:(NSString *)zone inView:(UIView *)view viewController:(UIViewController *)viewController;
 
 /**
  * Redirects the user to the website for that ad.
