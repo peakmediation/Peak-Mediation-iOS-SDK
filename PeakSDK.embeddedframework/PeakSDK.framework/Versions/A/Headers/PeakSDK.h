@@ -1,6 +1,6 @@
 //
 //  PeakSDK.h
-//  PeakSDK v.0.17.0
+//  PeakSDK v.0.17.1
 //
 //  Copyright © 2016 Peak. All rights reserved.
 //
@@ -197,7 +197,7 @@ typedef NS_ENUM(NSUInteger, PKTargetGender)
 /**
  * Sets info about user's age for more precise ad targeting
  */
-- (void)setTargetingAge:(NSUInteger)age;
+- (void)setTargetingAge:(NSInteger)age;
 
 /**
  * Sets info about user's gender for more precise ad targeting
