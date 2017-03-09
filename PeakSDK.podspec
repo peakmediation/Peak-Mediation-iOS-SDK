@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name = 'PeakSDK'
-s.version = '0.17.3'
+s.version = '0.17.4'
 s.summary = 'Our mediation technology is built to truly make each ad network and demand source compete, dynamically, for each ad call, with out ANY WORK by you.'
 s.homepage = 'http://peakmediation.com'
 s.license = 'PeakSDK'
