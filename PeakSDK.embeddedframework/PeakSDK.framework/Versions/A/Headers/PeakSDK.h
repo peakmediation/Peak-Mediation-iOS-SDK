@@ -1,6 +1,6 @@
 //
 //  PeakSDK.h
-//  PeakSDK v.0.17.5
+//  PeakSDK v.0.18.0
 //
 //  Copyright © 2016 Peak. All rights reserved.
 //
