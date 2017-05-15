@@ -189,3 +189,16 @@ Please add the NSLocationWhenInUseUsageDescription key to your Info.plist:
         [[PeakSDK sharedInstance] setTargetingGender:[user gender]];
 
     You must set this info before calling -configureWithAppId: method.
+
+### Using PeakSDK with Swift
+
+After installing PeakSDK pod as usual you need to create header file Peak-Bridging-Header.h with following contents:
+
+        #ifndef Peak_Bridging_Header_h
+        #define Peak_Bridging_Header_h
+
+        #import <PeakSDK/PeakSDK.h>
+
+        #endif /* Peak_Bridging_Header_h */
+
+Then set the path to this file in 'Objective-C Bridging Header' field in 'Swift Compiler - General' section in Build Settings tab of your project. So PeakSDK class is now available in Swift code.                                                                               

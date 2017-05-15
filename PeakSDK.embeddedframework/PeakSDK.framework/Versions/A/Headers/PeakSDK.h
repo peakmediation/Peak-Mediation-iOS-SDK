@@ -7,6 +7,7 @@
 
 #import "PeakNativeAd.h"
 #import "PeakAsyncAdRequest.h"
+#import <UIKit/UIKit.h>
 
 /**
  * Use the PeakSDKDelegate to receive callbacks on:
