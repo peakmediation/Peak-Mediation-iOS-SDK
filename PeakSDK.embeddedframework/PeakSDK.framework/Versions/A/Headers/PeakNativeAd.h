@@ -1,6 +1,6 @@
 //
 //  PeakNativeAd.h
-//  PeakSDK v.0.18.2
+//  PeakSDK v.0.18.4
 //
 //  Copyright © 2016 Peak. All rights reserved.
 //
