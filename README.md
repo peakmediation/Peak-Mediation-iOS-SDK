@@ -23,12 +23,6 @@ If you are only going to test out one SDK this month, Peak Mediation’s all enc
 
 	$ sudo gem install cocoapods
 
-### Install Git Large File Storage
-
-[Git LFS](https://git-lfs.github.com) replaces large files such as libraries and SDK with text pointers inside Git, while storing the file contents on a remote server. It allows CocoaPods to download large dependencies without problems. You can install the Git LFS tool on OS X by running the following command from the terminal. Detailed information is available in the [Getting Started guide](https://git-lfs.github.com).
-
-    $ sudo git lfs install
-
 ### Add a PeakSDK to your iOS app
 
 CocoaPods is used to install and manage dependencies in existing Xcode projects.
@@ -131,7 +125,7 @@ Please add the NSLocationWhenInUseUsageDescription key to your Info.plist:
 
         - (void)didCompleteInitialization;
         - (void)didFailInitializationWithError:(NSError *)error;
-        
+
     Multiple initializations calls are not the best practice but latest Peak SDK version can handle this correctly.
 
 3. Check availability of ad in particular zone:
@@ -149,19 +143,19 @@ Please add the NSLocationWhenInUseUsageDescription key to your Info.plist:
 6. Get native ad. Native Ads will allow developers to show ads in custom formats in their applications:
 
         PeakNativeAd *native = [[PeakSDK sharedInstance] showNativeAdForZone:@"YOUR_ZONE_ID"];
-    
+
     Unlike Banner and Interstitial ads, the impressions and clicks are not automatically handled, and need to be wrapped when events do occur. Call the next method to track that native ad for current zone was shown:
 
         [[PeakSDK sharedInstance] trackNativeAdShownForZone:@"YOUR_ZONE_ID" inView:adView viewController:viewController];
-    
+
     Use the next method to handle click on the "Call to Action" button. Call of this method will redirect the user to the website for privacy information:
 
         [[PeakSDK sharedInstance] handleNativeAdClickForZone:@"YOUR_ZONE_ID"];
-        
+
     Use the next method to handle click on the "Privacy Icon" button. Call of this method will redirect the user to the website for that ad:
 
         [[PeakSDK sharedInstance] handlePrivacyIconClickForZone:@"YOUR_ZONE_ID"];
-        
+
     Make sure your ads are clearly distinguished from the rest of your app’s content. You must include clearly visible text that reads “Promoted,” “Sponsored,” “Ad” or a localized version thereof.
 
 7. Handle SDK events using delegate pattern:
@@ -169,19 +163,19 @@ Please add the NSLocationWhenInUseUsageDescription key to your Info.plist:
         [[PeakSDK sharedInstance] setDelegate:self];
 
     PeakSDKDelegate provides protocol to implement proper response on PeakSDK events such as successful and unsuccessful ads presentation, completing reward experience or closing interstitials.
-        
+
 8. Make async call that checks ad availability and executes completionBlock if ad is available and async call is not canceled.
    All UI changes should be handled in completionBlock, do not change UI in other place, if you use this call.
 
         PeakAsyncAdRequest *asyncRequest = [[PeakSDK sharedInstance] asyncAdRequestForZone:zone];
         [self setAsyncRequest:asyncRequest];
         [asyncRequest start:completionBlock];
-        
+
     If you want to cancel async call use following method:
-    
+
         [[self asyncRequest] cancel];
 
-    Don’t forget to cancel async request if you don’t need one anymore. It prevent unexpected ads presentations and other unhandled behaviour. 
+    Don’t forget to cancel async request if you don’t need one anymore. It prevent unexpected ads presentations and other unhandled behaviour.
 
 9. Get more pesonalized ads with higher revenue. Just provide consumer's targeting info:
 
