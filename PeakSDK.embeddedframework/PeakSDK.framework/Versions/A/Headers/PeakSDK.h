@@ -1,6 +1,6 @@
 //
 //  PeakSDK.h
-//  PeakSDK v.0.18.4
+//  PeakSDK v.0.18.5
 //
 //  Copyright © 2016 Peak. All rights reserved.
 //
@@ -59,7 +59,7 @@ typedef NS_ENUM(NSUInteger, PKTargetGender)
  */
 - (void)didShowBannerInZone:(NSString *)zoneID;
 
-/**
+/** 
  * Notifies your app that showing of a banner was failed.
  * @param zoneID The NSString object. It contain peakAdZoneID.
  * @param error The error object. It can contain underlying error with more useful information for key NSUnderlyingErrorKey
